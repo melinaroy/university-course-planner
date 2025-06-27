@@ -1,4 +1,6 @@
-# uLaval Course Planner
+![WIP](https://img.shields.io/badge/status-WIP-yellow)
+
+# University Course Planner
 
 Course planning tool for Université Laval using JavaScript.
 
@@ -26,7 +28,7 @@ Once that’s working, I plan to fetch official data directly from ULaval’s co
 
 ## 🚀 What’s next
 
-- [ ] Write requirements
+- [x] Write requirements
 - [ ] Define high-level roadmap
 - [ ] Breakdown the "how" - structutre, inputs, outputs, classes and key logic
 - [ ] Start learning and coding in Javascript
