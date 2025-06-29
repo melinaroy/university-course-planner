@@ -10,11 +10,14 @@ While planning my path for the computer science certificate at Université Laval
 
 Since I’m aiming for the multimedia and video game concentration, it gets even more complex. Before each semester, I’ve been planning everything manually with handwritten notes — so I figured, why not build a tool to automate all this?
 
+
 ### 🧪 Approach
 
 To keep it simple at first, I’ll start by manually entering course data (program structure, completed courses, schedules, etc.) to develop the core logic for dependencies and time conflicts.
 
 Once that’s working, I plan to fetch official data directly from ULaval’s course site to automate the planning process.
+
+In the future, I’d also like to explore integrating AI to improve decision-making, generate personalized recommendations, and optimize academic paths based on multiple criteria like duration, preferences, and workload.
 
 ## 📁 Project structure
 
@@ -30,5 +33,5 @@ Once that’s working, I plan to fetch official data directly from ULaval’s co
 
 - [x] Write requirements
 - [ ] Define high-level roadmap
-- [ ] Breakdown the "how" - structutre, inputs, outputs, classes and key logic
+- [ ] Breakdown the "how" - structure, inputs, outputs, classes and key logic
 - [ ] Start learning and coding in Javascript
