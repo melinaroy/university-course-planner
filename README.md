@@ -22,11 +22,23 @@ In the future, I’d also like to explore integrating AI to improve decision-mak
 ## 📁 Project structure
 
 ```
-├── index.html
-├── script.js
-├── styles.css
-└── docs/
-    └── requirements.md
+├── data/                         # Static data for development
+│   ├── courses-data.json
+│   └── program-data.json
+│
+├── docs/                         # Documentation and design notes
+│   ├── object-oriented-design.md
+│   ├── requirements.md
+│   └── use-cases.md
+│
+├── src/                          # Source code
+│   ├── classes/                  # Domain classes (core logic)
+│   ├── fetchers/                 # Fetching external data
+│   ├── index.html                # Entry point for the interface
+│   ├── main.js                   # Main logic and orchestration
+│   └── styles.css                # App styles
+└── README.md
+
 ```
 
 ## 🚀 What’s next
