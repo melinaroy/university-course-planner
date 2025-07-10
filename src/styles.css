@@ -1,0 +1,30 @@
+/* styles.css */
+
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  background-color: #fdfdfd;
+  color: #222;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+label {
+  font-weight: 500;
+  margin-left: 20px;
+}
+
+select {
+  padding: 3px 6px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.hidden {
+    display:none;
+}
