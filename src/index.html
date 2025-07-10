@@ -1,42 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>University Course Planner</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script type="module" src="main.js" defer></script>
-</head>
-<body>
-  <h1>University Course Planner</h1>
-  <div id="program-selection">
-    <p>Select your program:</p>
-    <div id="program-level">
-      <label>Level:
-        <select id="program-level-selector">
-          <option value="cycle1" selected>1er Cycle</option>
-          <option value="cycle2">2e Cycle</option>
-          <option value="cycle3">3e Cycle</option>
-        </select>
-      </label>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>University Course Planner</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="main.js" defer></script>
+  </head>
+  <body>
+    <h1>University Course Planner</h1>
+    <div id="program-selection">
+      <p>Select your program:</p>
+      <div id="program-level">
+        <label
+          >Level:
+          <select id="program-level-selector">
+            <option value="cycle1" selected>1er Cycle</option>
+            <option value="cycle2">2e Cycle</option>
+            <option value="cycle3">3e Cycle</option>
+          </select>
+        </label>
+      </div>
+      <div id="program-type">
+        <label
+          >Type:
+          <select id="program-type-selector">
+            <!-- dynamically filled -->
+          </select>
+        </label>
+      </div>
+      <div id="program-field">
+        <label
+          >Field:
+          <select id="program-field-selector">
+            <!-- dynamically filled -->
+          </select>
+        </label>
+      </div>
     </div>
-    <div id = "program-type">
-      <label>Type:
-        <select id="program-type-selector">
+    <div id="found-program-section" class="hidden">
+      <h2 id="program-title"></h2>
+      <div id="mandatory-courses-section">
+        <p>Mandatory Courses:</p>
+        <ul id="mandatory-courses">
           <!-- dynamically filled -->
-        </select>
-      </label>
+        </ul>
+      </div>
     </div>
-    <div id = "program-field">
-      <label>Field:
-        <select id="program-field-selector">
-          <!-- dynamically filled -->
-        </select>
-      </label>
-    </div>
-  </div>
-  <div id="found-program-section" class="hidden">
-    <h2 id="program-title"></h2>
-  </div>
-</body>
+  </body>
 </html>

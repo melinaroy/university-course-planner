@@ -14,12 +14,12 @@
    - list of preferred elective courses
 1. System retrieves program structure and required courses.
 1. System generates an academic path that:
-  - includes all required courses
-  - respects prerequisites and available schedules
-  - accounts for courses in progress (treated as completed for future planning)
-  - tries to include preferred courses
-  - provides the expected completion date for that scenario
-  - aims to minimize the number of semesters required
+   - includes all required courses
+   - respects prerequisites and available schedules
+   - accounts for courses in progress (treated as completed for future planning)
+   - tries to include preferred courses
+   - provides the expected completion date for that scenario
+   - aims to minimize the number of semesters required
 1. System displays the suggested path to the student.
 
 ## Use Case 2: Compare Multiple Academic Paths

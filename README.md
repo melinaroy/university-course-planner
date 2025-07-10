@@ -10,7 +10,6 @@ While planning my path for the computer science certificate at Université Laval
 
 Since I’m aiming for the multimedia and video game concentration, it gets even more complex. Before each semester, I’ve been planning everything manually with handwritten notes — so I figured, why not build a tool to automate all this?
 
-
 ### 🧪 Approach
 
 To keep it simple at first, I’ll start by manually entering course data (program structure, completed courses, schedules, etc.) to develop the core logic for dependencies and time conflicts.

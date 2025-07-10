@@ -126,11 +126,11 @@ academicpath -->|compares| completion
 | ---------- | -------------------------------- |
 | Attributes | semester: Fall, Winter or Summer |
 | Attributes | year: int                        |
-| Attributes | startDate:                         |
+| Attributes | startDate:                       |
 | Attributes | endDate:                         |
-| Attributes | courses: List[Course]                        |
-| Behaviors | addCourse(Course)                       |
-| Behaviors | removeCourse(Course)                       |
+| Attributes | courses: List[Course]            |
+| Behaviors  | addCourse(Course)                |
+| Behaviors  | removeCourse(Course)             |
 
 |            | Schedule                      |
 | ---------- | ----------------------------- |
@@ -155,26 +155,26 @@ academicpath -->|compares| completion
 | Behaviors  | setCurrentCourses              |
 | Behaviors  | setPreferredCourses            |
 
-|            | Path                                   |
-| ---------- | -------------------------------------- |
-| Attributes | structure: List[Semester] |
-| Attributes | lastSemester: List[Course]             |
+|            | Path                       |
+| ---------- | -------------------------- |
+| Attributes | structure: List[Semester]  |
+| Attributes | lastSemester: List[Course] |
 
-|            | PathEvaluator         |
-| ---------- | --------------------------- |
-| Attributes | validPath: bool             |
-| Attributes | score: int                  |
-| Attributes | pathRecommendation:  string |
-| Behaviors  | checkScheduleConflict(Semester)       |
-| Behaviors  | checkScheduleAvailability   |
-| Behaviors  | validateStudyLoad           |
-| Behaviors  | evaluateScore           |
-| Behaviors  | summarizeRecommendations           |
+|            | PathEvaluator                   |
+| ---------- | ------------------------------- |
+| Attributes | validPath: bool                 |
+| Attributes | score: int                      |
+| Attributes | pathRecommendation: string      |
+| Behaviors  | checkScheduleConflict(Semester) |
+| Behaviors  | checkScheduleAvailability       |
+| Behaviors  | validateStudyLoad               |
+| Behaviors  | evaluateScore                   |
+| Behaviors  | summarizeRecommendations        |
 
 |            | PathPlanner                |
 | ---------- | -------------------------- |
 | Attributes | path: Path                 |
-| Behaviors  | determineCoursesToDo |
+| Behaviors  | determineCoursesToDo       |
 | Behaviors  | setCourseWithPrerequisites |
 | Behaviors  | setMandatoryCourses        |
 | Behaviors  | selectPreferredCourses     |
