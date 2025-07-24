@@ -1,4 +1,5 @@
 import { Program } from './classes/program.js';
+import { populateSelector } from './utils/dom.js';
 
 const programs = [new Program('cycle1', 'certificate', 'computer-science')];
 
@@ -9,17 +10,15 @@ const programFieldSelector = document.getElementById('program-field-selector');
 function populateProgramTypes() {
   // clean old options
   programTypeSelector.innerHTML = '';
-  // populate program types
+  // get selected program level
   const programLevel = programLevelSelector.value;
-  for (const [value, text] of Object.entries(
-    Program.programTypes[programLevel],
-  )) {
-    const option = document.createElement('option');
-    option.value = value;
-    option.textContent = text;
-    programTypeSelector.appendChild(option);
-  }
-  programTypeSelector.selectedIndex = 0;
+  // create array of program types for the selected level
+  const typeEntries = Object.entries(Program.programTypes[programLevel] || {});
+  // create options for each program type
+  const options = typeEntries.map(([value, text]) => ({ value, text }));
+  // populate the selector with the new options
+  populateSelector(programTypeSelector, options);
+  // populate program fields based on the selected type
   populateProgramFields();
 }
 
@@ -29,28 +28,29 @@ function populateProgramFields() {
   // get current selections
   const programLevel = programLevelSelector.value;
   const programType = programTypeSelector.value;
-  // populate prgram fields with matching available programs
-  let hasMatch = false;
-  for (const program of programs) {
-    if (program.level === programLevel && program.type === programType) {
-      const option = document.createElement('option');
-      option.value = program.field;
-      option.textContent = program.fieldLabel;
-      programFieldSelector.appendChild(option);
-      hasMatch = true;
-    }
+  // find matching programs
+  const matchingPrograms = programs.filter(
+    (program) => program.level === programLevel && program.type === programType,
+  );
+  // if there is a match, populate the field selector
+  if (matchingPrograms.length > 0) {
+    // populate program fields with matching available programs
+    populateSelector(
+      programFieldSelector,
+      matchingPrograms.map((program) => ({
+        value: program.field,
+        text: program.fieldLabel,
+      })),
+    );
+    programFieldSelector.disabled = false;
+  } else {
+    // if no match, create option indicating no program available
+    populateSelector(programFieldSelector, [
+      { value: '', text: 'No Program Available', disabled: true },
+    ]);
+    programFieldSelector.disabled = true;
   }
-  // no program match the selection
-  if (!hasMatch) {
-    const option = document.createElement('option');
-    option.disabled = true;
-    option.value = '';
-    option.textContent = 'Aucun programme disponible';
-    programFieldSelector.appendChild(option);
-  }
-  // select field and disabled if applicable
-  programFieldSelector.selectedIndex = 0;
-  programFieldSelector.disabled = !hasMatch;
+  // populate program section
   populateProgramSection();
 }
 
@@ -77,9 +77,11 @@ function populateProgramSection() {
   const programTitle = document.getElementById('program-title');
   // hide
   programSection.classList.add('hidden');
-  if (getSelectedProgram() instanceof Program) {
+  const program = getSelectedProgram();
+  // if a program is selected, fill the section
+  if (program instanceof Program) {
     // fill program name
-    programTitle.innerHTML = getSelectedProgram().toString();
+    programTitle.innerHTML = program.toString();
     // enable visibility of section
     programSection.classList.remove('hidden');
   }
