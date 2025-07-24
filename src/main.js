@@ -1,4 +1,5 @@
 import { Program } from './classes/program.js';
+import { createSelectorOption } from './utils/dom.js';
 
 const programs = [new Program('cycle1', 'certificate', 'computer-science')];
 
@@ -14,9 +15,8 @@ function populateProgramTypes() {
   for (const [value, text] of Object.entries(
     Program.programTypes[programLevel],
   )) {
-    const option = document.createElement('option');
-    option.value = value;
-    option.textContent = text;
+    // create option
+    const option = createSelectorOption(value, text);
     programTypeSelector.appendChild(option);
   }
   programTypeSelector.selectedIndex = 0;
@@ -29,23 +29,18 @@ function populateProgramFields() {
   // get current selections
   const programLevel = programLevelSelector.value;
   const programType = programTypeSelector.value;
-  // populate prgram fields with matching available programs
+  // populate program fields with matching available programs
   let hasMatch = false;
   for (const program of programs) {
     if (program.level === programLevel && program.type === programType) {
-      const option = document.createElement('option');
-      option.value = program.field;
-      option.textContent = program.fieldLabel;
+      const option = createSelectorOption(program.field, program.fieldLabel);
       programFieldSelector.appendChild(option);
       hasMatch = true;
     }
   }
   // no program match the selection
   if (!hasMatch) {
-    const option = document.createElement('option');
-    option.disabled = true;
-    option.value = '';
-    option.textContent = 'Aucun programme disponible';
+    const option = createSelectorOption('', 'No Program Available', true);
     programFieldSelector.appendChild(option);
   }
   // select field and disabled if applicable
