@@ -21,28 +21,26 @@ In the future, I’d also like to explore integrating AI to improve decision-mak
 ## 📁 Project structure
 
 ```
-├── data/                         # Static data for development
-│   ├── courses-data.json
-│   └── program-data.json
-│
-├── docs/                         # Documentation and design notes
-│   ├── object-oriented-design.md
-│   ├── requirements.md
-│   └── use-cases.md
-│
-├── src/                          # Source code
-│   ├── classes/                  # Domain classes (core logic)
-│   ├── fetchers/                 # Fetching external data
-│   ├── index.html                # Entry point for the interface
-│   ├── main.js                   # Main logic and orchestration
-│   └── styles.css                # App styles
-└── README.md
-
+├── data/                    # Static or generated data files
+├── docs/                    # Documentation for the project
+├── src/                     # Main source code
+│   ├── classes/             # Class definitions (e.g., Program, Course)
+│   ├── fetchers/            # Data fetching or loading utilities
+│   ├── utils/               # Reusable utility functions (DOM, formatting, etc.)
+│   ├── index.html           # Main HTML file (entry point)
+│   ├── main.js              # Application logic (entry script)
+│   └── styles.css           # CSS styles
+├── tests/                   # Unit tests (e.g., using Jest)
+├── .gitignore
+├── .prettierrc              # Prettier config – formatting rules (quotes, semicolons, tabs, etc.)
+├── eslint.config.mjs        # ESLint config – rules and plugins for code quality and analysis
+├── package.json             # Project metadata, dependencies, and npm scripts
+├── package-lock.json        # Locked versions of installed packages (ensures consistent installs)
+└── README.md                # Project overview and instructions
 ```
 
 ## 🚀 What’s next
 
-- [x] Write requirements
-- [ ] Define high-level roadmap
-- [ ] Breakdown the "how" - structure, inputs, outputs, classes and key logic
+- [x] Define project goals and requirements
+- [x] Draft a object-oriented design plan
 - [ ] Start learning and coding in Javascript

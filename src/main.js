@@ -1,7 +1,12 @@
 import { Program } from './classes/program.js';
 import { populateSelector } from './utils/dom.js';
 
-const programs = [new Program('cycle1', 'certificate', 'computer-science')];
+const programs = [
+  new Program('cycle1', 'certificate', 'computer-science'),
+  new Program('cycle1', 'certificate', 'data-science'),
+  new Program('cycle1', 'bachelor', 'data-science'),
+  new Program('cycle2', 'microprogram', 'computer-science'),
+];
 
 const programLevelSelector = document.getElementById('program-level-selector');
 const programTypeSelector = document.getElementById('program-type-selector');

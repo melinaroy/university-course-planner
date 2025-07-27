@@ -21,12 +21,14 @@ export class Program {
   };
   static programFields = {
     'computer-science': 'Informatique',
+    'data-science': 'Science des données',
   };
 
   constructor(level, type, field) {
     this.level = level;
     this.type = type;
     this.field = field;
+    this.mandatorycourses = [];
 
     // labels
     this.levelLabel = Program.programLevels[level];
